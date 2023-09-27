@@ -1,22 +1,10 @@
-function shortestWordLength(str) {
-  var words = str.split(" ");
-
-  var shortestLength = 0;
-
-  for (var i = 0; i < words.length; i++) {
-    var word = words[i];
-    var length = word.length;
-
-    if (!shortestLength) shortestLength = length;
-
-    if (length < shortestLength) {
-      shortestLength = length;
-    }
-  }
-
-  return shortestLength;
+function findShort(s) {
+  const lenaght = s.split(" ").map((word) => word.length);
+  return Math.min(...lenaght);
 }
 
-const result = shortestWordLength("Iterate through each word and update the shortest length if necessary");
+const result = findShort(
+  "In publishing and graphic design, Lorem ipsum is a typeface without relying on meaningful content. Lorem ipsum may be used as a placeholder before final copy is available."
+);
 
 console.log(result);
