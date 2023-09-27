@@ -4,12 +4,10 @@ function spinWords(string) {
 
   for (let i = 0; i < words.length; i++) {
     const word = words[i];
-    if (word.length > 5) {
+    if (word.length >= 5) {
       const drow = word.split("").reverse().join("");
 
       result = result + drow + " ";
-    } else if (word.length === 5) {
-      result = result + word.toUpperCase() + " ";
     } else {
       result = result + word + " ";
     }
@@ -17,5 +15,6 @@ function spinWords(string) {
 
   return result.trim();
 }
+const mesal = spinWords("kharchang haye ashi mashii");
 
-console.log(spinWords("Hey fellow warriors amirhosse is besty "));
+console.log(mesal);
