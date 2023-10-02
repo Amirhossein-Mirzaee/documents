@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      var first = Number(prompt("enter first"));
+      var second = Number(prompt("enter second"));
+      let count = 0;
+      if (first % 2 === 0) {
+        while (first < second) {
+          first = first + 2;
+          console.log(first);
+        }
+      } else {
+        first++;
+        while (first < second) {
+          first = first + 2;
+          console.log(first);
+        }
+      }
+    </script>
+  </body>
+</html>
