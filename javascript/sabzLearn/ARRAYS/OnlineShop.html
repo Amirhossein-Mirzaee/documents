@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const Products = [
+        { id: 1, Name: "Aroosak", price: 2700 },
+        { id: 2, Name: "Lebas", price: 12000 },
+        { id: 3, Name: "Canva", price: 2500 },
+        { id: 4, Name: "Shoone", price: 1200 },
+      ];
+
+      const basket = [
+        { id: 1, Name: "suits", price: 120001 },
+        { id: 2, Name: "PC", price: 250000 },
+      ];
+
+      var reqPro;
+
+      var proName = prompt("Enter Product's Name :))");
+      var isInSome = Products.some((Product) => {
+        if (proName === Product.Name) {
+          reqPro = Product;
+          return true;
+        }
+      });
+
+      if (isInSome === true) {
+        var newPro = {
+          id: reqPro.id,
+          Name: reqPro.Name,
+          price: reqPro.price,
+        };
+        basket.push(newPro);
+        console.log(basket);
+
+        var sum = 0;
+
+        var proPrice = basket.forEach((Product) => {
+          return (sum += Product.price);
+        });
+        console.log(
+          "مجموع خرید شما برابر با " + sum + " " + "تومان" + " " + "میباشد"
+        );
+      } else {
+        console.log("نیستیش");
+      }
+    </script>
+  </body>
+</html>

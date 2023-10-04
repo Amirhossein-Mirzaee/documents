@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // var userName = prompt("Enter your Name :))))", "Asqar");
+      const users = [
+        { id: 1, Fname: "Amir", Lname: "Mirzaee" },
+        { id: 2, Fname: "Karim", Lname: "Booziaf" },
+        { id: 3, Fname: "Baqdad", Lname: "Boonejah" },
+      ];
+
+      // users.includes(userName) ? alert("هستش") : alert("نیستاش");
+      // اما فقط استرینگ /نامبر /بولین از ما به عنوان پارامتر قبول میکنه پس یه متد دیگه و کامل تر به اسم some میاد
+      //  متد سام مثل فور ایچ ازمون فانکشن میگیره و بدنه ی فانکشن رو روی ارایه اعمال میکنه دز صورتی که ما بولین میخوایم ازش
+      const isInUsers = users.some((user) => {
+        return user.Fname == "Karim";
+      });
+      console.log(isInUsers);
+    </script>
+  </body>
+</html>

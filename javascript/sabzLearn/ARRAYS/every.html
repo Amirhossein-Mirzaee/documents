@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        { id: 1, Fname: "Amir", age: 19 },
+        { id: 2, Fname: "Karim", age: 17 },
+        { id: 3, Fname: "Baqdad", age: 25 },
+        { id: 4, Fname: "Amir", age: 12 },
+        { id: 5, Fname: "Karim", age: 21 },
+        { id: 6, Fname: "Baqdad", age: 18 },
+      ];
+      var allowed = [];
+      var everAllowed = users.filter((user) => {
+        return user.age > 18;
+      });
+    allowed.push(everAllowed)
+    console.log(allowed);
+    </script>
+  </body>
+</html>

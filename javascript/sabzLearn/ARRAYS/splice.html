@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //اسپلایس میاد دو تا پارامتر میگیره اولی ایندکس شروعش حذفه و بعدی تعدادی هست که میخوایم حذف کنیم یعنی چند خونه بره جلو
+      //پارمتر سوم تا بی نهایت هم میتونه مقادیری باشه که ما میخوایم به جای ناحیه اسپلایس شده قرار بدیم
+      const Products = [
+        { id: 1, Name: "Aroosak", price: 2700 },
+        { id: 2, Name: "Lebas", price: 12000 },
+        { id: 3, Name: "Canva", price: 2500 },
+        { id: 4, Name: "Shoone", price: 1200 },
+      ];
+
+      const basket = [
+        { id: 1, Name: "suits", price: 120001 },
+        { id: 2, Name: "PC", price: 250000 },
+        { id: 3, Name: "Milk", price: 1400 },
+      ];
+      var userReq = prompt("1. Add \n 2. Remove ");
+      var reqPro;
+      if (userReq === "1") {
+        var proName = prompt("Enter the product Name");
+        var isInShop = Products.some((Product) => {
+          if (proName === Product.Name) {
+            reqPro = Product;
+            return true;
+          }
+        });
+        if (isInShop === true) {
+          var newPro = {
+            id: basket[basket.length - 1].id + 1,
+            Name: reqPro.Name,
+            price: reqPro.price,
+          };
+        }
+        basket.push(newPro);
+      } else if (userReq === "2") {
+        basket.splice([basket.length - 1]);
+      } else alert("بی ناموس دلقک");
+
+      console.log(basket);
+    </script>
+  </body>
+</html>
