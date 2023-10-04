@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //Array.isArray boolean
+      //indexOf return (first) index of array and lastindexOf return (last) index
+      //slice have two parametr that give first index start and then index of array you want to cut
+      //Join makes array string with concat sign parametr
+      //reverse method
+      //split opposite of join make string to array and parameters is when arrive to that parametr in string seperate from there
+      var userLetter = prompt("Enetr any word");
+      var splittedLetter = userLetter.split("");
+      // console.log(splittedLetter);
+      var reversedLetter = splittedLetter.reverse();
+      // console.log(reversedLetter);
+      var joinedLetters = reversedLetter.join("");
+      // console.log(joinedLetters);
+      if (userLetter === joinedLetters) {
+        alert("َشبیهه");
+      } else alert("شبیه نیس");
+    </script>
+  </body>
+</html>

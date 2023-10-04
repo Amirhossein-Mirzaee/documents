@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const Products = [
+        { id: 1, Name: "Aroosak", price: 27000 },
+        { id: 2, Name: "Lebas", price: 120000 },
+        { id: 3, Name: "Canva", price: 250000 },
+        { id: 4, Name: "Shoone", price: 12000 },
+      ];
+
+      var notFreePost = Products.filter((Product) => {
+        return Product.price < 100000;
+      });
+
+      var postFee = notFreePost.length * 1000;
+
+      var sum = 0;
+
+      var total = Products.forEach((Product) => {
+        return (sum = sum + Product.price);
+      });
+      var totalPrice = sum + postFee;
+      console.log(totalPrice);
+    </script>
+  </body>
+</html>

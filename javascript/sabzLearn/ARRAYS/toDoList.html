@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const completeTodos = [
+        { id: 1, title: "Run", isDoing: false },
+        { id: 2, title: "Walk", isDoing: false },
+        { id: 3, title: "Fuck", isDoing: false },
+      ];
+      const userMenu = prompt(
+        "Select one of these:\n1.Add\n2.Remove\n3.Make to is doing"
+      );
+      if (userMenu === "1") {
+        const userTaitle = prompt("Enter your Todo <:)");
+        const newTodo = {
+          id: completeTodos[completeTodos.length - 1].id + 1,
+          title: userTaitle,
+          isDoing: false,
+        };
+        completeTodos.push(newTodo);
+        console.log(completeTodos);
+        alert("success :)");
+      }
+      if (userMenu === "2") {
+        const userTaitle = prompt("Enter your Todo you wnat to remove <:(");
+        const filtered = completeTodos.filter((todo) => {
+          return todo.title !== userTaitle;
+        });
+        console.log(filtered);
+        alert("deleted :(");
+      }
+      if (userMenu === "3") {
+        const userTaitle = prompt(
+          "Enter your Todo you want to add to (is Doing)<:)"
+        );
+        const founded = completeTodos.find((todo) => {
+          if (userTaitle === todo.title) {
+            return (todo.isDoing = true);
+          }
+        });
+        console.log(completeTodos);
+        alert("is Doing :)");
+      }
+    </script>
+  </body>
+</html>

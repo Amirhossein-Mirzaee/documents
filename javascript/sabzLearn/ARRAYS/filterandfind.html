@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // فقط ایتمای رو ریترن میکنه که شامل اون شرط باشن
+      const ages = [12, 24, 11, 45, 22];
+
+      var slicedAge = ages.slice(1, 2);
+      console.log(slicedAge);
+      var filteredAge = ages.filter((age) => {
+        return age ** 2 > 500;
+      });
+
+      var found = ages.find((age) => {
+        return age === 12 * 2;
+      });
+      console.log(found);
+      console.log(filteredAge);
+    </script>
+  </body>
+</html>
