@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const cities = {
+        Tehran: ["Varamin", "Tajrish", "Pardis"],
+        Shiraz: ["Shiraz", "Marvdasht"],
+        Mashhad: ["Quchan", "Sarakhs", "Vakil Blvd"],
+        Tabriz: ["Marand", "Ahar", "Jolfa"],
+      };
+
+      const userCity = prompt(
+        "Enetr Your destination :) \n1.Tehran\n2.Shiraz\n3.Mashhad\n4.Tabriz"
+      );
+
+      const subCity = prompt("which one" + " " + cities[userCity] + "?");
+
+      if (cities[userCity].includes(subCity)) {
+        alert("Your ticket has been Done");
+      } else alert("fuck u ;>");
+    </script>
+  </body>
+</html>
