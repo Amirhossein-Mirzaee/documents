@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const allQuestion = [
+        { id: 1, title: "2+2", answer: "4" },
+        { id: 2, title: "3*2", answer: "6" },
+        { id: 3, title: "8/4", answer: "2" },
+        { id: 4, title: "12*4", answer: "48" },
+        { id: 5, title: "78+8", answer: "86" },
+        { id: 6, title: "100*100", answer: "10000" },
+      ];
+
+      let scores = 0;
+
+      allQuestion.forEach((question) => {
+        const mainAnswer = prompt(question.title);
+
+        if (mainAnswer === question.answer) {
+          scores++;
+        }
+      });
+      alert("your Final scores is " + " " + scores);
+    </script>
+  </body>
+</html>
