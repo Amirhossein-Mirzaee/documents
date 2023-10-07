@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let i = 10;
+      //   const timer = setInterval(() => {
+      //     if (i === 15) {
+      //       clearInterval(timer);
+      //     }
+      //     console.log(i);
+      //     i++;
+      //   }, 2000);
+
+      let min = +prompt("enter minutes...");
+      let sec = +prompt("enter seconds...");
+
+      const timer = setInterval(() => {
+        if (sec === -1) {
+          min--;
+          sec = 59;
+        }
+        if (min === 0 && sec === 0) {
+          clearInterval(timer);
+          alert("دبگه تمومه");
+        }
+        console.log("Timer : " + min + ":" + sec);
+        sec--;
+      }, 1000);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let num1 = Number(prompt("enter num 1"));
+      let num2 = Number(prompt("enter num 2"));
+      let userOperator = prompt(
+        "enter the operator\n1. *\n2. +\n3. -\n4. /\n5. **"
+      );
+      let answer = 0;
+      if (userOperator === "1") {
+        answer = num1 * num2;
+        alert(answer);
+      } else if (userOperator === "2") {
+        answer = num1 + num2;
+        alert(answer);
+      } else if (userOperator === "3") {
+        answer = num1 - num2;
+        alert(answer);
+      } else if (userOperator === "4") {
+        answer = num1 / num2;
+        alert(answer);
+      } else if (userOperator === "5") {
+        answer = num1 ** num2;
+        alert(answer);
+      } else alert("you choose invalid operator :(");
+    </script>
+  </body>
+</html>
