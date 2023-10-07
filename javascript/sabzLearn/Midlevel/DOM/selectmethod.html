@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="title" align="center">cdmckm</h1>
+    <ul>
+      <li class="ilist">cdfvrf</li>
+      <li class="ilist">edcevcrfvv</li>
+      <li class="ilist">cedc</li>
+    </ul>
+    <script>
+      let h1elem = document.getElementById("title");
+      console.log(h1elem.getAttribute("id")); //accesing attribute
+      h1elem.setAttribute("class", "jstext"); // set any attribute
+      h1elem.style.color = "red"; //access styles
+      let items = document.getElementsByClassName("ilist"); //elements always returns array
+      console.log(items[2].style.color = "red");
+      let list = document.getElementsByTagName("li");
+      let firstSelected = document.querySelector(".ilist"); //return first elemnt that contains that class or id
+      let ulItems = document.querySelectorAll(".ilist");
+
+    </script>
+  </body>
+</html>

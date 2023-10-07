@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <img src="./Picsa/bulboff.gif" id="bulb" />
+
+    <button type="button" id="btn" onclick="turn()">Click</button>
+    <script>
+      let bulb = document.getElementById("bulb");
+
+      let flagBulb = false;
+
+      function turn(params) {
+        if (flagBulb) {
+          bulb.setAttribute("src", "./Picsa/bulboff.gif");
+          document.getElementById("btn").innerHTML = "on";
+          flagBulb = false;
+        } else {
+          bulb.setAttribute("src", "./Picsa/bulbon.gif");
+          document.getElementById("btn").innerHTML = "Off";
+
+          flagBulb = true;
+        }
+      }
+    </script>
+  </body>
+</html>
