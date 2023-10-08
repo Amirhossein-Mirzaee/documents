@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>SabzLearn | Js | 114</title>
+  </head>
+
+  <body>
+    <div class="login-page">
+      <div class="form">
+        <input
+          type="text"
+          placeholder="username"
+          class="username"
+          onblur="usernameValidation()"
+        />
+        <span class="username-validation"></span>
+        <input
+          type="password"
+          placeholder="password"
+          onblur="passwordValidation()"
+          class="password"
+        />
+        <span class="password-validation"></span>
+        <button>login</button>
+        <p class="message">Not registered? <a>Create an account</a></p>
+      </div>
+    </div>
+
+    <script>
+      let $ = document;
+
+      const userName = $.querySelector(".username");
+      const passWord = $.querySelector(".password");
+
+      const userNameMessage = $.querySelector(".username-validation");
+
+      const passWordMessage = $.querySelector(".password-validation");
+
+      const usernameValidation = () => {
+        // console.log("blur");
+        if (userName.value.length < 12) {
+          userNameMessage.style.display = "block";
+          userNameMessage.style.background = "red";
+          userNameMessage.innerHTML = "invalid userName";
+        } else {
+          userNameMessage.style.display = "block";
+          userNameMessage.style.background = "blue";
+          userNameMessage.innerHTML = "valid userName";
+        }
+      };
+      const passwordValidation = () => {
+        if (passWord.value.length < 8) {
+          passWordMessage.style.display = "block";
+          passWordMessage.style.background = "red";
+          passWordMessage.innerHTML = "invalid passWord";
+        } else {
+          passWordMessage.style.display = "block";
+          passWordMessage.style.background = "blue";
+          passWordMessage.innerHTML = "valid passWord";
+        }
+      };
+      setTimeout(() => {
+        passWordMessage.style.display = "none";
+        userNameMessage.style.display = "none";
+      }, 4000);
+    </script>
+  </body>
+</html>

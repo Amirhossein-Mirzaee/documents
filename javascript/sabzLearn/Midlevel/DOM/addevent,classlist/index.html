@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .red {
+        color: rebeccapurple;
+      }
+      .sm {
+        font-size: small;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 id="h1" align="center">Salam o doorood</h1>
+    <script>
+      const $ = document;
+
+      const h1elem = $.getElementById("h1");
+      h1elem.addEventListener("click", () => {
+        // h1elem.classList.add("red");
+        h1elem.classList.toggle("red");
+        h1elem.classList.add("sm");
+        h1elem.classList.remove("sm");
+      });
+    </script>
+  </body>
+</html>

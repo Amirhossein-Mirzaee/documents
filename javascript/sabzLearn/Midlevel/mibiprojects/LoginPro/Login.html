@@ -20,17 +20,29 @@
 
     <div class="modal">لطفا اطلاعات لازم را به درستی وارد کنید</div>
 
+
     <script>
-      let userName = document.querySelector(".username");
-      let passWord = document.querySelector(".password");
+      const userName = document.querySelector(".username");
+      const passWord = document.querySelector(".password");
+      const modal = document.querySelector(".modal");
+      // const model = document.querySelector(".model");
 
       function dataValidation() {
+        const userNameValue = userName.value;
+        const passwordValue = passWord.value;
 
-
-
-        if (userName.nodeValue.lenght < 12 || passWord.value <) {
-
+        if (userNameValue.length < 12 || passwordValue.length < 8) {
+          modal.style.display = "block";
+        } else {
+          // model.style.display = "block";
+          modal.style.background = "white";
+          modal.style.color = "black";
+          modal.innerHTML = "لاگین شدین:)";
+          modal.style.display = "block";
         }
+        setTimeout(() => {
+          modal.style.display = "none ";
+        }, 3000);
       }
     </script>
   </body>
