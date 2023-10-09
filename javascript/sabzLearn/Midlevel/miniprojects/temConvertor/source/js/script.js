@@ -9,16 +9,20 @@ const converter = $.getElementById("converter");
 const result = $.querySelector(".result");
 
 convBtn.addEventListener("click", () => {
-  if (converter.value === "") {
+  if (
+    converter.value === "" ||
+    isNaN(converter.value) ||
+    converter.value === " "
+  ) {
     result.innerHTML = "Insert Correct Temp";
     result.style.color = "red";
   } else {
     if (firstValue.innerHTML === "°C") {
       result.innerHTML =
-        "Temp is:" + " " + (converter.value * 1.8 + 32).toFixed(0) + "°F";
+        "Temp is:" + " " + (converter.value * 1.8 + 32).toFixed(2) + "°F";
     } else {
       result.innerHTML =
-        "Temp is:" + " " + ((converter.value - 32) * 0.55).toFixed(0) + "°C";
+        "Temp is:" + " " + ((converter.value - 32) * 0.55).toFixed(2) + "°C";
     }
     result.style.color = "black";
   }
