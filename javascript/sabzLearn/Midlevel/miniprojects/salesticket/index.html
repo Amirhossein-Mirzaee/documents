@@ -58,13 +58,18 @@
         US: ["Dallas", "Miami", "New york", "Alabama", "Washington", "LA"],
       };
       countrySelectBox.addEventListener("change", function () {
-        const mainCountryName = countrySelectBox.value;
-        const mainCountryCities = countriesData[mainCountryName];
+        if (countrySelectBox.value === "Please Select") {
+          citySelect.innerHTML = "";
+          citySelect.innerHTML += "<option>Select City...</option>";
+        } else {
+          const mainCountryName = countrySelectBox.value;
+          const mainCountryCities = countriesData[mainCountryName];
 
-        citySelect.innerHTML = "";
-        mainCountryCities.forEach((city) => {
-          citySelect.innerHTML += "<option>" + city + "</option>";
-        });
+          citySelect.innerHTML = "";
+          mainCountryCities.forEach((city) => {
+            citySelect.innerHTML += "<option>" + city + "</option>";
+          });
+        }
       });
     </script>
   </body>
