@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <h1 id="title" class="text">saz</h1> -->
+
+    <ul id="list">
+      <li class="list-items"><a href="">Home</a></li>
+      <li class="list-items"><a href="">Abou</a></li>
+      <li class="list-items"><a href="">Products</a></li>
+      <li class="list-items"><a href="">FAQ</a></li>
+      <!-- سبزلرن -->
+      <li class="list-items"><a href="">ASa</a></li>
+    </ul>
+    <button>Remove H1</button>
+    <script>
+      const btn = document.querySelector("button");
+      //   const h1elem = document.getElementById("title");
+      //   const h1TextElem = document.getElementsByClassName("text"); //this return an array
+
+      //   btn.addEventListener("click", () => {
+      //     h1elem.remove();
+      //     //or
+      //     h1TextElem[0].remove();
+      //   });
+
+      const listItems = document.querySelectorAll(".list-items");
+
+      listItems.forEach((li) => {
+        li.addEventListener("click", (event) => {
+          event.preventDefault();
+          console.log(event.target);
+          event.target.parentElement.remove();
+        });
+      });
+    </script>
+  </body>
+</html>
