@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h3>Try to copy</h3>
+    <textarea id="editor" cols="30" rows="10">Its my text area</textarea>
+    <h3>Log:</h3>
+    <p id="log"></p>
+    <script>
+      const editor = document.getElementById("editor");
+
+      function copyHandler(event) {
+        event.preventDefault();
+        console.log("copy", event);
+      }
+      function cutHandler(event) {
+        event.preventDefault();
+
+        console.log("cut", event);
+      }
+      function pasteHandler(event) {
+        event.preventDefault();
+
+        console.log("paste", event);
+      }
+      editor.addEventListener("copy", copyHandler);
+      editor.addEventListener("cut", cutHandler);
+      editor.addEventListener("paste", pasteHandler);
+    </script>
+  </body>
+</html>

@@ -1,37 +1,33 @@
-﻿const inputElem = document.querySelector("input");
-// const container = document.getElementsByClassName("container");
-const addTodoForm = document.querySelector(".add");
-const todo = document.querySelector(".todos");
+﻿const $ = document;
 
-addTodoForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-});
-const addNewTod = (newToDoValue) => {
-  const newToDoLi = document.createElement("li");
+const newTodo = $.querySelector("input");
+const addTodo = $.querySelector("form");
+const list = $.querySelector("ul");
+
+const addToList = (newTodoValue) => {
+  const newToDoLi = $.createElement("li");
   newToDoLi.className =
     "list-group-item d-flex justify-content-between align-items-center";
-  const newToDoTitleSpan = document.createElement("span");
-  newToDoTitleSpan.innerHTML = newToDoValue;
-  const newToDoTrash = document.createElement("i");
-
-
-  newToDoLi.append(newToDoTitleSpan, newToDoTrash);
-
-
+  const newToDoTitleSpan = $.createElement("span");
+  newToDoTitleSpan.innerHTML = newTodoValue;
+  const newToDoTrash = $.createElement("i");
+  newToDoTrash.addEventListener("click", (event) => {
+    event.target.parentElement.remove();
+  });
   newToDoTrash.className = "fa fa-trash-o delete";
-
-  todo.append(newToDoLi);
-
+  newToDoLi.append(newToDoTitleSpan, newToDoTrash);
+  list.append(newToDoLi);
 };
 
-inputElem.addEventListener("keydown", (event) => {
-  const newToDoValue = event.target.value.trim();
-
-  if (event.key === "Enter") {
-    if (newToDoValue) {
-      addNewTod(newToDoValue);
-    }
-  }
+addTodo.addEventListener("submit", (event) => {
+  event.preventDefault();
 });
 
-// function remove() {}
+newTodo.addEventListener("keydown", (event) => {
+  const newTodoValue = event.target.value.trim();
+
+  if (event.key === "Enter" && newTodoValue) {
+    newTodo.value = "";
+    addToList(newTodoValue);
+  }
+});
