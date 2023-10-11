@@ -4,34 +4,43 @@ const listed = $.getElementById("listed");
 const btnSave = $.getElementById("btn-save");
 const btnDelete = $.getElementById("btn-delete");
 const colors = $.querySelectorAll(".color-box");
-console.log();
 
-const handleAdd = (event) => {
-  console.log(event.target.type);
-  const inputElemValue = event.target.value.trim();
-  if (event.key === "Enter" ||  === "click") {
-    if (inputElemValue) {
-      inputElem.value = "";
-      addToList(inputElemValue);
-    }
+colors.forEach((color) => {
+  color.addEventListener("click", (event) => {
+    const mainColor = event.target.style.backgroundColor;
+    inputElem.style.backgroundColor = mainColor;
+  });
+});
+
+btnDelete.addEventListener("click", () => {
+  inputElem.value = "";
+  inputElem.style.backgroundColor = "white";
+});
+
+const addToList = () => {
+  if (inputElem.value) {
+    const newDiv = $.createElement("div");
+    const inputBg = inputElem.style.backgroundColor;
+    newDiv.style.backgroundColor = inputBg;
+    newDiv.className = "card shadow-sm rounded";
+    newDiv.addEventListener("click", (event) => {
+      event.target.parentElement.remove();
+    });
+    const newTitle = $.createElement("p");
+    newTitle.className = "card-text p-3";
+    newTitle.innerHTML = inputElem.value;
+    newDiv.append(newTitle);
+    listed.append(newDiv);
+    inputElem.value = "";
+    inputElem.style.backgroundColor = "white";
   }
 };
 
-const addToList = (inputElemValue) => {
-  const newDiv = $.createElement("div");
-  newDiv.className = "card shadow-sm rounded";
-  const newTitle = $.createElement("p");
-  newTitle.className = "card-text p-3";
-  newTitle.innerHTML = inputElemValue;
-  newDiv.append(newTitle);
-  listed.append(newDiv);
-};
-btnDelete.addEventListener("click", () => {
-  inputElem.value = "";
+btnSave.addEventListener("click", addToList);
+inputElem.addEventListener("keydown", (event) => {
+  if (event.key === "Enter") {
+    if (inputElem.value) {
+      addToList();
+    }
+  }
 });
-btnSave.addEventListener("click", handleAdd);
-inputElem.addEventListener("keydown", handleAdd);
-
-
-
-btnDelete.addEventListener()

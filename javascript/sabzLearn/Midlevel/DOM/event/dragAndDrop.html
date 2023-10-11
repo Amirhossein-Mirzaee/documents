@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="react" draggable="true" ondragstart="dragStartHandler(event)">
+      React
+    </h1>
+    <h1 id="vue" draggable="true" ondragstart="dragStartHandler(event)">vue</h1>
+    <div
+      ondragover="dragOverHandler(event)"
+      id="drop"
+      ondrop="dropHandler(event)"
+      style="width: 200px; height: 235px; border: 8px solid lightblue"
+    ></div>
+
+    <script>
+      //   const dragStartHandler = (event) => {
+      //     console.log("darg");
+
+      //     event.dataTransfer.setData("elemId", event.target.id);
+      //   };
+      //   const dropHandler = (event) => {
+      //     const targetId = event.dataTransfer.getData("elemId");
+      //     const targetElem = document.getElementById(targetId);
+      //     event.target.append(targetElem);
+
+      //     // console.log("dropped");
+      //   };
+      //   const dragOverHandler = (event) => {
+      //     event.preventDefault();
+      //     console.log("dropped");
+      //   };
+
+      const dragStartHandler = (event) => {
+        event.dataTransfer.setData("elemId", event.target.id);
+        console.log(event.dataTransfer);
+      };
+      const dropHandler = (event) => {
+        const taragetId = event.dataTransfer.getData("elemId");
+        const targetElem = document.getElementById(taragetId);
+        console.log("shod");
+        event.target.append(targetElem);
+      };
+      const dragOverHandler = (event) => {
+        event.preventDefault();
+        console.log("ghj");
+      };
+    </script>
+  </body>
+</html>

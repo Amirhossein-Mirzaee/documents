@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="play">Play Audio</button>
+    <button id="pause">Pause Audio</button>
+    <button id="duration">duration</button>
+    <button id="playBackMusicRate">2x/dblclick to back to 1x</button>
+    <button id="showCurrenttime">show current time</button>
+    <p></p>
+    <!-- <span></span> -->
+
+    <audio src="Haamim - Eshghe Ghadimi (320).mp3"></audio>
+    <script>
+      const audioElem = document.querySelector("audio");
+      const time = document.querySelector("p");
+    //   const left = document.querySelector("span");
+      const playBtn = document.getElementById("play");
+      const pauseBtn = document.getElementById("pause");
+      const duartionBtn = document.getElementById("duration");
+      const playBackMusicRateBtn = document.getElementById("playBackMusicRate");
+      const showCurrenttimeBtn = document.getElementById("showCurrenttime");
+
+      const playHandler = () => {
+        audioElem.play();
+        console.log("played");
+      };
+
+      const pauseHandler = () => {
+        audioElem.pause();
+        console.log("paused");
+      };
+
+      const durationHandler = () => {
+        console.log("Duration:", (audioElem.duration / 60).toFixed(2));
+      };
+
+      const playBackMusicRateHandler = () => {
+        audioElem.playbackRate = 2;
+        console.log("musicSpeed2x");
+      };
+
+      const showCurrenttimeHandler = () => {
+        console.log(audioElem.currentTime);
+      };
+
+      const converto1x = () => {
+        audioElem.playbackRate = 1;
+        console.log("musicSpeed2x");
+      };
+
+      setInterval(() => {
+        time.innerHTML =
+          audioElem.currentTime < 10
+            ? "00:" + "0" + Math.floor(audioElem.currentTime)
+            : "00:" + Math.floor(audioElem.currentTime);
+      }, 1000);
+
+      playBtn.addEventListener("click", playHandler);
+      pauseBtn.addEventListener("click", pauseHandler);
+      duartionBtn.addEventListener("click", durationHandler);
+      playBackMusicRateBtn.addEventListener("click", playBackMusicRateHandler);
+      playBackMusicRateBtn.addEventListener("dblclick", converto1x);
+      showCurrenttimeBtn.addEventListener("click", showCurrenttimeHandler);
+    </script>
+  </body>
+</html>
