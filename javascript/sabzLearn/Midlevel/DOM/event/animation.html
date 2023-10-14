@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 600px;
+        height: 120px;
+        background: lightblue;
+        font-size: 22px;
+        padding: 10px;
+        text-align: center;
+        margin: 30px;
+        font-weight: bold;
+        position: relative;
+      }
+      @keyframes move {
+        from {
+          top: 0px;
+        }
+        to {
+          top: 180px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <button>set anime</button>
+    <div>this div is test for anime :)</div>
+    <script>
+      const addAnimationBtn = document.querySelector("button");
+      const div = document.querySelector("div");
+
+      const setAnime = () => {
+        div.style.animation = "move 1s 3";
+        console.log(div);
+      };
+      addAnimationBtn.addEventListener("click", setAnime);
+
+    </script>
+  </body>
+</html>
