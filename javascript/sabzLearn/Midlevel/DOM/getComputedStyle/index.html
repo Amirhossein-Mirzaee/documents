@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="box" style="font-size: 29px">Box</div>
+    <script>
+      const boxElem = document.getElementById("box");
+      //   console.log(boxElem.style)//just for inline Style
+      const boxElemStyles = getComputedStyle(boxElem);
+      console.log(boxElemStyles.width); //for external css file
+    </script>
+  </body>
+</html>

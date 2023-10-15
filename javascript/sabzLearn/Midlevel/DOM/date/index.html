@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #clock {
+        font-family: Arial, sans-serif;
+        font-size: 48px;
+        text-align: center;
+        margin-top: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock"></div>
+    ;
+    <script>
+      const updateClock = () => {
+        const now = new Date();
+        let hours = now.getHours();
+        let mins = now.getMinutes();
+        let secs = now.getSeconds();
+        mins = padZero(mins);
+        secs = padZero(secs);
+        const time = hours + ":" + mins + ":" + secs;
+        document.getElementById("clock").textContent = time;
+        function padZero(num) {
+          return (num < 10 ? "0" : "") + num;
+        }
+      };
+
+      setInterval(updateClock, 1000);
+    </script>
+  </body>
+</html>

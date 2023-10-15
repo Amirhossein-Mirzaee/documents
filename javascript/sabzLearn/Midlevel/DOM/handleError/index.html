@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p></p>
+    <input type="text" name="" id="" />
+    <button>check Value</button>
+    <script>
+      //   const num = 12;
+      const errElem = document.querySelector("p");
+      const inputElem = document.querySelector("input");
+      const buttonelem = document.querySelector("button");
+
+      //   try {
+      //     console.log(x);
+      //   } catch (error) {
+      //     errElem.innerHTML = error
+
+      //   }
+
+      buttonelem.addEventListener("click", () => {
+        try {
+          if (inputElem.value.length > 8) {
+            throw "too high";
+          } else {
+            throw "too low";
+          }
+        } catch (error) {
+          errElem.innerHTML = error;
+        } finally {
+          inputElem.value = "";
+        }
+      });
+    </script>
+  </body>
+</html>
