@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1></h1>
+    <script>
+      const userInfo = document.querySelector("h1");
+      const users = [
+        { id: 1, name: "Amin", age: 21 },
+        { id: 2, name: "Hossein", age: 73 },
+        { id: 3, name: "Hasan", age: 27 },
+        { id: 4, name: "Amir", age: 28 },
+        { id: 5, name: "soheil", age: 14 },
+        { id: 6, name: "Abbas", age: 12 },
+      ];
+      const locationSearch = location.search;
+      //bad way
+      //   console.log(locationSearch.slice(1).split("=")[1]);
+      //goood way
+      const locationSearchParasm = new URLSearchParams(locationSearch);
+      const userIdParams = locationSearchParasm.get("id");
+
+      const mainUser = users.find((user) => {
+        return user.id == userIdParams;
+      });
+      if (mainUser) {
+        userInfo.innerHTML = mainUser.name + mainUser.age;
+      } else {
+        userInfo.innerHTML = "not found";
+      }
+    </script>
+  </body>
+</html>

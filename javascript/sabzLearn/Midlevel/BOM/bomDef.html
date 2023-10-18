@@ -1,0 +1,23 @@
+<!-- (DOM) => "document object model";
+ (BOM) => "browser object model";
+
+ https://www.w3schools.com/js/js_window.asp -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1 id="h1elem">BOM</h1>
+    <script>
+      const h1elem = window.document.getElementById("h1elem");
+
+      window.console.log(h1elem);
+
+      //window is global and we don't use it commonly
+    </script>
+  </body>
+</html>

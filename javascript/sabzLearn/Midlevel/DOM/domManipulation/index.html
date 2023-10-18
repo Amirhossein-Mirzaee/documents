@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="users"></ul>
+    <script>
+      const users = document.getElementById("users");
+
+      let userArray = [
+        "Amin",
+        "Soheil",
+        "Amir",
+        "MMD",
+        "Hosein",
+        "Kamran",
+        "Amirali",
+      ];
+      const userFragment = document.createDocumentFragment();
+      userArray.forEach((user) => {
+        // console.log(user);
+        const newUserLi = document.createElement("h1");
+        newUserLi.innerHTML = user;
+        userFragment.append(newUserLi);
+      });
+      users.append(userFragment);
+    </script>
+  </body>
+</html>

@@ -26,6 +26,7 @@ const shopItemsContainer = $.querySelector(".shop-items");
 const bastekProductsContainer = $.querySelector(".cart-items");
 const removeAllProductsBtn = $.querySelector("#remove-all-products");
 const cardTotalPrice = $.querySelector(".cart-total-price");
+const productFragment = document.createDocumentFragment();
 
 allProducts.forEach(function (product) {
   let productContainer = $.createElement("div");
@@ -59,8 +60,9 @@ allProducts.forEach(function (product) {
     productImageElem,
     productDetailsContainer
   );
-  shopItemsContainer.append(productContainer);
+  productFragment.append(productContainer);
 });
+shopItemsContainer.append(productFragment);
 
 function addProductToBasketArray(productId) {
   const exciting = userBasket.find(function (product) {
