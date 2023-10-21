@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //برای پیمایش ر.وی ابجکت
+      const user = {
+        id: 1,
+        name: "Ali",
+        age: 21,
+      };
+      for (const item in user) {
+        if (Object.hasOwnProperty.call(user, item)) {
+          const element = user[item];
+          console.log(element);
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const pow = (num1, num2) => num1 ** num2; //if its one line fn doesnt need return and curly braces
+      const logger = (val) => console.log(val); //if fn has a parameter doesnt need Parentheses
+      const generateUser = (id, name, age = 18) => ({
+        //default value for parameters
+        id: id,
+        name: name,
+        age: age,
+      }); //if return is one line and its return is object put that in  Parentheses
+        console.log(generateUser(1, "ALi"));
+    </script>
+  </body>
+</html>

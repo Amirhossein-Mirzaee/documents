@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul class="list">
+      <li>HTML</li>
+      <li>CSS</li>
+      <li>JS</li>
+      <li>React</li>
+      <li>Vue</li>
+    </ul>
+    <input type="text" placeholder="dev Language" />
+    <script>
+      const listItems = document.querySelectorAll("li");
+      const inputElem = document.querySelector("input");
+      const ulElem = document.querySelector(".list");
+
+    //   listItems.forEach((item) => {
+    //     item.addEventListener("click", (event) => {
+    //       console.log(event.target.value);
+    //       event.target.remove();
+    //     });
+    //   });
+      ulElem.addEventListener("click", (event) => {
+        console.log(event.target.tagName);
+        if (event.target.tagName === "LI") {
+          event.target.remove();
+        }
+      });
+      inputElem.addEventListener("keypress", (event) => {
+        if (event.keyCode === 13) {
+          if (inputElem.value) {
+            const newLi = document.createElement("li");
+            newLi.innerHTML = event.target.value;
+            ulElem.append(newLi);
+            console.log(listItems);
+            inputElem.value = "";
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

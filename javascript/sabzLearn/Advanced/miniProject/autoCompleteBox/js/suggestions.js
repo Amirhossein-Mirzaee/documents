@@ -10,7 +10,7 @@ searchInpueElem.addEventListener("keyup", () => {
     autoCompleteWrapper.classList.add("active");
 
     const filteredWords = suggestions.filter((word) => {
-      return word.toLowerCase().includes(searchValue.toLowerCase());
+      return word.toLowerCase().startsWith(searchValue.toLowerCase());
     });
     suggestionWordsGenerator(filteredWords);
   } else {
@@ -23,7 +23,7 @@ const suggestionWordsGenerator = (arr) => {
   });
   let customWord;
   if (generatedWord.length === 0) {
-    customWord = "<li>" + searchInpueElem + "</li>";
+    customWord = "<li>" + searchInpueElem.value + "</li>";
   } else {
     customWord = generatedWord.join("");
   }
@@ -35,8 +35,7 @@ const select = () => {
   allListItems.forEach((word) => {
     word.addEventListener("click", (event) => {
       searchInpueElem.value = event.target.textContent;
-    autoCompleteWrapper.classList.remove("active");
-
+      autoCompleteWrapper.classList.remove("active");
     });
   });
 };

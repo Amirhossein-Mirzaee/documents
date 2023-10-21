@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" placeholder="userID" id="user_id" />
+
+    <script>
+      //   const user = {
+      //     id: 1,
+      //     name: "Ali",
+      //     age: 22,
+      //   };
+      //   const id = user.id;
+      //   const name = user.name;
+      //   const age = user.age;
+      let users = [
+        { id: 1, name: "Amin", age: 28 },
+        { id: 2, name: "Ali", age: 19 },
+        { id: 3, name: "Amir", age: 21 },
+        { id: 4, name: "Amoo", age: 58 },
+      ];
+      //   //   const { age, name, id } = users; //ترتیب مهم نیست
+      //   //   console.log(id);
+      //   //   console.log(name);
+      //   //   console.log(age);
+      const generateUser = (userID) => {
+        const mainUser = users.find((user) => user.id == userID);
+        return mainUser;
+      };
+      //   const { name: userName, age: userAge } = generateUser(4);
+      //   console.log();
+
+      const userIDInput = document.querySelector("input");
+      userIDInput.addEventListener("keypress", (e) => {
+        const { keyCode, target: input } = e;
+        if (keyCode === 13) {
+          const { name, age } = generateUser(input.value);
+          console.log(name);
+          console.log(age);
+        }
+      });
+    </script>
+  </body>
+</html>

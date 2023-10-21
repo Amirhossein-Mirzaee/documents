@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" class="todo_input" />
+    <ul class="todolist"></ul>
+    <script>
+      const inputElem = document.querySelector("input");
+      const todoList = document.querySelector("ul");
+      const trim = (val) => {
+        return val.trim();
+      };
+      //وقتی توابع رو جدا تعریف میکنیم مثل اسگلا میشه کامپوزیشن فاانکشن
+      const addTodo = (event) => {
+        if (event.keyCode === 13) {
+          const newLi = "<li>" + trim(inputElem.value) + "</li>";
+          todoList.insertAdjacentHTML("beforeend", newLi);
+          inputElem.value = "";
+          console.log(newLi);
+        }
+      };
+      inputElem.addEventListener("keydown", addTodo);
+    </script>
+  </body>
+</html>

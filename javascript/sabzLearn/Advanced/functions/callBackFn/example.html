@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const books = [
+        { id: 1, name: "Bi shouri", price: 95000 },
+        { id: 2, name: "Shahname", price: 400000 },
+        { id: 3, name: "Pedar madar...", price: 30000 },
+      ];
+
+      const addBooks = (name, price, callBack) => {
+        const newBook = {
+          id: books.length + 1,
+          name: name,
+          price: price,
+        };
+        setTimeout(() => {
+          books.push(newBook);
+          callBack();
+        }, 4000);
+      };
+      const logBooks = () => {
+        console.log(books);
+      };
+      addBooks("golestan", 20000, logBooks);
+    </script>
+  </body>
+</html>

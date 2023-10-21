@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li>sth</li>
+      <li>sth</li>
+      <li>sth</li>
+      <li>sth</li>
+      <li>sth</li>
+      <li>sth</li>
+    </ul>
+    <script>
+      const number = [1, 23, 54, 84, 5]; //ایتریبل یعنی قابل پیمایش باشه
+      const userName = "Amin.com"; //ایتریبله
+      const age = 24; //نییست
+      const user = [
+        { id: 1, name: "ali" },
+        { id: 2, name: "akbar" },
+        { id: 3, name: "amin" },
+      ]; //نیست
+      for (const item of user) {
+        //برای دیتا های ایتریبل
+        // console.log(item.id);
+      }
+      function sum() {
+        // console.log(arguments); //شبه ارایه هم ایتریبله
+        let allSum = 0;
+        for (const arg of arguments) {
+          allSum += arg;
+        }
+        // console.log(allSum);
+        return allSum;
+      }
+      sum(1, 23, 6, 4, 4);
+
+      ///////////////////////////////////////////////
+      const liElems = document.getElementsByTagName("li");
+      console.log(liElems);
+      for (const li of liElems) {
+        li.addEventListener("click", () => {
+          console.log("1");
+        });
+      }
+    </script>
+  </body>
+</html>

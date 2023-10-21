@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const user = [1, "Ali", 24];
+
+      //   const userID = user[0];
+      //   const userName = user[1];
+      //   const userAge = user[2];
+      const [userID, userName, userAge] = user;
+      //   console.log(userID);
+      //   console.log(userName);
+      //   console.log(userAge);
+      const showNum = () => [1, 2, 45, 25, 78];
+
+      const [firstNum, , , secNum, thirdNum] = showNum();
+      console.log(firstNum);
+      console.log(thirdNum);
+    </script>
+  </body>
+</html>

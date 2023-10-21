@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function sum(...arg) {
+        // console.log("a", a);
+        // console.log("b", b);
+        // console.log("c", c);
+        console.log(arg);
+        let sumAll = 0;
+        arg.forEach((item) => (sumAll += item));
+        return sumAll;
+      }
+      console.log(sum(1, 2, 3, 12, 18, 2));
+    </script>
+  </body>
+</html>
