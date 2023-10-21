@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul id="menu">
+      <li class="menu-item">Home</li>
+      <li class="menu-item">Abou</li>
+      <li class="menu-item">Contact</li>
+      <li class="menu-item">Product</li>
+    </ul>
+
+    <script>
+      const ulElem = document.getElementById("menu");
+      ulElem.addEventListener("click", () => {
+        console.log("click");
+      });
+
+      // in consol you can use $("#menu") except selectors
+      const menuItem = document.querySelectorAll(".menu-item");
+      console.log(menuItem);
+      // in consol you can use $$(".menu-item") except selectors
+
+      
+    </script>
+  </body>
+</html>
