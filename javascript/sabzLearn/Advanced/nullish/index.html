@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //?? is like || no diffrences
+      //   const port = 0;
+      //   const developingPort = port || 3003; faslsy value =? truthly value
+      //   console.log(developingPort);
+
+      //////////////////////////////////////////////
+      const port = null;
+      const testPort = 2000;
+      const developingPort = (testPort || port) ?? 3003; //فقط دیتای نال و اندیفایند رو ازش رد میشه
+      console.log(developingPort);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <ul>
+      <li onclick="removeItem(this)">Home</li>
+      <li onclick="removeItem(this)">Products</li>
+      <li onclick="removeItem(this)">About</li>
+      <li onclick="removeItem(this)">Contact Us</li>
+      <li onclick="removeItem(this)">Courses</li>
+    </ul>
+    <script>
+      const removeItem = (el) => {
+        el.remove();
+        console.log(el);
+      };
+      function sumNubers() {
+        let sum = 0;
+        console.log(arguments);
+        for (const arg of arguments) {
+          sum += arg;
+        }
+        console.log(this);
+        return sum;
+      }
+      console.log(sumNubers(2, 6, 3));
+    </script>
+  </body>
+</html>
