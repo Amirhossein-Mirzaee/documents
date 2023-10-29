@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const fetchData = () => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log("fetching data");
+            resolve({ id: 1, message: "complete" });
+          }, 2000);
+        });
+      };
+      const parseData = (data) => {
+        return new Promise((resolve, reject) => {
+          let parseOutput = `parse the data id:${data.id} and with ${data.message}`;
+          setTimeout(() => {
+            resolve({ parsed: parseOutput });
+          }, 2000);
+        });
+      };
+      const showData = (response) => {
+        return new Promise((resolve, reject) => {
+          setTimeout(() => {
+            console.log(response.parsed);
+            resolve(response);
+          }, 2000);
+        });
+      };
+      fetchData().then(parseData).then(showData);
+    </script>
+  </body>
+</html>

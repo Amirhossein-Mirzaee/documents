@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>get random user</button>
+    <script>
+      const btn = document.querySelector("button");
+      btn.addEventListener("click", () => {
+        fetch("https://randomuser.me/api/", { method: "GET" })
+          .then((res) => {
+            if (res.status === 200) {
+              return res.json();
+            }
+            return new Error("error");
+          })
+          .then((data) => console.log(data));
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const loadCdn = (href) => {
+        return new Promise((resolve, reject) => {
+          const linkTag = document.createElement("link");
+          linkTag.rel = "stylesheet";
+          linkTag.href = href;
+
+          linkTag.onload = () => resolve("file loaded succesfully");
+          linkTag.onerror = () => reject(new Error("file not loaded"));
+
+          document.head.append(linkTag);
+        });
+      };
+      console.log(loadCdn("style.js"));
+    </script>
+  </body>
+</html>

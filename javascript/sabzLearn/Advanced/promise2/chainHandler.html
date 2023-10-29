@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const wordPromise = new Promise((resolve, reject) => {
+        const text = "sabzLearn";
+
+        if (text) {
+          resolve(text);
+        } else {
+          reject(new Error("text empty"));
+        }
+      });
+      wordPromise
+        .then((response) => response.split("")) //این ریترن میاد تو then  بعدی اجرا میشه
+        .then((response2) => response2.reverse())
+        .then((response3) => response3.join(""))
+        .then((response4) => console.log(response4))
+        .catch((err) => console.log(err));
+    </script>
+  </body>
+</html>
