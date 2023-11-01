@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   const id = 1;
+      //   const name = "amin";
+      //   const age = 22;
+      //   const job = "web dev";
+
+      //   const user = {
+      //     id,
+      //     name,
+      //     age,
+      //     job,
+      //   };
+      //   console.log(user);
+
+      const userMaker = (firstName, lastName, age) => {
+        const user = {
+          firstName,
+          lastName,
+          age,
+        };
+        return user;
+      };
+      const userAli = userMaker("ali", "mohammadi", 22);
+      console.log(userAli);
+    </script>
+  </body>
+</html>

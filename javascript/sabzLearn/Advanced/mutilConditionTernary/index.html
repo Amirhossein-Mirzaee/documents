@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const score = 20;
+      const status =
+        score >= 0 && score <= 5
+          ? "A"
+          : score > 5 && score <= 10
+          ? "B"
+          : score > 10 && score <= 20
+          ? "C"
+          : "invalid";
+      console.log(status);
+    </script>
+  </body>
+</html>

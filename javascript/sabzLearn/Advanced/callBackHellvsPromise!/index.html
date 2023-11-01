@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //promise vs callBackHell
+      //   const myPromise = new Promise((reslove, reject) => {
+      //     const loginFlage = false;
+      //     setTimeout(() => {
+      //       console.log("login checked");
+      //       if (loginFlage) {
+      //         reslove();
+      //       } else {
+      //         reject();
+      //       }
+      //     }, 3000);
+      //   });
+      //   myPromise
+      //     .then(() => {
+      //       console.log("succes");
+      //     })
+      //     .catch(() => {
+      //       console.log("error");
+      //     });
+
+      const books = [
+        { id: 1, name: "Bi shouri", price: 95000 },
+        { id: 2, name: "Shahname", price: 400000 },
+        { id: 3, name: "Pedar madar...", price: 30000 },
+      ];
+
+      const addBooks = (name, price) => {
+        const newBook = {
+          id: books.length + 1,
+          name,
+          price,
+        };
+        return new Promise((resolve, reject) => {
+          const loginFlag = false;
+          setTimeout(() => {
+            if (loginFlag) {
+              resolve("you allowed :)");
+            } else {
+              reject(new Error("you don,t allowed"));
+            }
+          }, 4000);
+        });
+      };
+
+      addBooks("golestan", 12000)
+        .then((succes) => {
+          console.log(succes);
+        })
+        .catch((unsucces) => console.log(unsucces));
+    </script>
+  </body>
+</html>

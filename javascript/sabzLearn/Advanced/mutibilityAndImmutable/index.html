@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //تغییر پذیر و تغییر ناپذیر
+      let numOne = 20; //تغییر ناپذیره ولی ری اساین میشه
+      numOne = 10;
+      console.log(numOne);
+
+      let user = {
+        id: 1,
+        userName: "Amin",
+        age: 22,
+      };
+      let user1 = user;
+      user1.userName = "Arash";
+      console.log(user);
+      console.log(user1); //تغییر پذیره
+    </script>
+  </body>
+</html>
