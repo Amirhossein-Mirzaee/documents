@@ -22,10 +22,11 @@
       const userCourses = (username) => {
         return new Promise((resolve, reject) => {
           setTimeout(() => {
-            resolve([
-              { id: 21, title: "Js Expert", price: "Free" },
-              { id: 34, title: "Redux Expert", price: "Free" },
-            ]);
+            // resolve([
+            //   { id: 21, title: "Js Expert", price: "Free" },
+            //   { id: 34, title: "Redux Expert", price: "Free" },
+            // ]);
+            reject("error");
           }, 3000);
         });
       };
@@ -58,11 +59,24 @@
       //     })
       // })
 
-      userLogin()
-        .then((userObject) => userCourses(userObject.username))
-        .then((userAllCourses) => mainCourseInfo(userAllCourses[1].title))
-        .then((mainInfos) => console.log(mainInfos));
-
+      //   userLogin()
+      //     .then((userObject) => userCourses(userObject.username))
+      //     .then((userAllCourses) => mainCourseInfo(userAllCourses[1].title))
+      //     .then((mainInfos) => console.log(mainInfos));
+      // with asynAwait with err handling
+      async function runCode() {
+        try {
+          const userInfo = await userLogin("amin-saedi", 4454);
+          const userAllCourses = await userCourses(userInfo.username);
+          const mainInfos = await mainCourseInfo(userAllCourses[0].title);
+        //   console.log(userInfo);
+        //   console.log(userAllCourses);
+          console.log(mainInfos);
+        } catch (error) {
+          alert("ridi");
+        }
+      }
+      runCode();
       console.log("کاربر با موفقیت لاگین شد");
     </script>
   </body>
