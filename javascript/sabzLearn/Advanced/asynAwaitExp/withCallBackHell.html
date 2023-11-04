@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const userLogin = (userName, password, callBack) => {
+        setTimeout(() => {
+          callBack({
+            userName: userName,
+            password: password,
+            email: "amir@gmail.com",
+          });
+        }, 4000);
+      };
+      const userCourses = (userName, callBack) => {
+        setTimeout(() => {
+          callBack([
+            { id: 21, title: "js", price: "free" },
+            { id: 34, title: "react", price: "2200" },
+          ]);
+        }, 3000);
+      };
+
+      const mainVideoInfo = (couseTitle, callBack) => {
+        setTimeout(() => {
+          callBack({
+            id: 34,
+            title: "react",
+            price: "2200",
+            teacher: "saeedi-Rad",
+            students: "2000",
+          });
+        }, 2000);
+      };
+
+      console.log("سایت لود شد");
+
+      const logInfo = userLogin("amir", "21234", (userObj) => {
+        console.log(userObj);
+
+        userCourses(userObj.userName, (userAllCourses) => {
+          console.log("user Courses", userAllCourses);
+
+          mainVideoInfo(userAllCourses[1].title, (userVideos) => {
+            console.log(userVideos);
+          });
+        });
+      });
+      console.log("succes Login");
+    </script>
+  </body>
+</html>

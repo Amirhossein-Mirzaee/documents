@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button id="setcookie">set cookie</button>
+    <button id="getcookie">get cookie</button>
+    <button id="removecookie">remove cookie</button>
+
+    <script>
+      //set cookie
+      const setCookie = (cookieName, cookieValue, exDay) => {
+        const now = new Date();
+        // console.log(now);
+        const expiresDay = now.setTime(now.getTime() + exDay * 24 * 60 * 60 * 1000);
+        // console.log(now);
+
+        document.cookie = `${cookieName}=${cookieValue};path=/;expires=${now}`;
+      };
+      const setCookieBtnElem = document
+        .getElementById("setcookie")
+        .addEventListener("click", () => {
+          const cookieName = prompt("enter cookieName");
+          const cookieValue = prompt("enter cookieValue");
+          const exDay = prompt("enter exDay");
+          setCookie(cookieName, cookieValue, exDay);
+        });
+      const getCookie = (cookieName) => {
+        const cookiesArray = document.cookie.split(";");
+        let mainCookie = null;
+        cookiesArray.some((cookie) => {
+          if (cookie.includes(cookieName)) {
+            mainCookie = cookie.substring(cookie.indexOf("=") + 1);
+            return true;
+          }
+        });
+        return mainCookie;
+      };
+      //get cookie
+      const getCookieBtnElem = document.getElementById("getcookie");
+      getCookieBtnElem.addEventListener("click", () => {
+        const mainCookieElem = prompt("enter main cookie");
+        console.log(getCookie(mainCookieElem));
+      });
+      //remove cookie
+      const removeCookie = (cookiename) => {
+        const now = new Date();
+        // console.log(now);
+        const expiresDay = now.setTime(now.getTime() - 2 * 24 * 60 * 60 * 1000);
+        // console.log(now);
+
+        document.cookie = `${cookiename}=js-dev;path=/;expires=${now}`;
+      };
+      const removeCookieBtnElem = document.getElementById("removecookie");
+      removeCookieBtnElem.addEventListener("click", () => {
+        const mainCookieElem = prompt("enter cookie name");
+        removeCookie(mainCookieElem);
+      });
+    </script>
+  </body>
+</html>
