@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const users = [
+        { id: 1, name: "Ali", score: 90 },
+        { id: 2, name: "Amir", score: 30 },
+        { id: 3, name: "Amin", score: 75 },
+        { id: 5, name: "Asqar", score: 100 },
+        { id: 4, name: "Akbar", score: 55 },
+      ];
+      const maxNumber = users.reduce((prev, curr) => {
+        if (prev < curr.score) {
+          return curr.score;
+        } else {
+          return prev;
+        }
+      }, 0);
+
+      const minNumber = users.reduce((prev, curr) => {
+        if (curr.score < prev.score) {
+          return curr.score;
+        } else return prev;
+      });
+      console.log(minNumber);
+    </script>
+  </body>
+</html>

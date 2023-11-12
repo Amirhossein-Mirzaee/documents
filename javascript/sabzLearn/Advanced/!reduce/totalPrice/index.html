@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      const prices = [1_000, 2_000_000, 500_000, 90_000];
+
+      const total = prices.reduce((prev, current) => {
+        // prev = prev ;
+        return prev + current;
+      });
+      console.log(total);
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <button>Save new cookie</button>
+    <script>
+      const cookieBtn = document
+        .querySelector("button")
+        .addEventListener("click", () => {
+          document.cookie = "userName = amin;path=/";
+          console.log(document.cookie);
+        });
+    </script>
+  </body>
+</html>

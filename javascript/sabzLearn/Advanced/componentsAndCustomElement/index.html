@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <p>sabz</p>
+    <site-user></site-user>
+    <script>
+      //dry => dont repeat yourself
+      //بیا یه فانکشن بنویس و اونو هربار نیاز داشتی بنویس
+      const pElem = document.querySelector("p");
+      class siteUser extends HTMLElement {
+        constructor() {
+          super();
+        }
+      }
+      window.customElements.define("site-user", siteUser);
+    </script>
+  </body>
+</html>
